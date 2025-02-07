@@ -143,29 +143,31 @@ const SearchForm = () => {
       <Paper
         sx={{ position: "relative", padding: "8px 16px 48px", elevation: 3 }}
       >
-        <Stack direction="row" spacing={2}>
-          <FormControl fullWidth>
-            <InputLabel id="trip-type">Type</InputLabel>
+        <Stack direction="row" spacing={2} sx={{ marginBottom: "16px" }}>
+          <FormControl>
             <Select
               labelId="trip-type"
               id="trip-type-select"
               value={tripType}
               label="Type"
               onChange={(e) => setTripType(e.target.value)}
+              variant="standard"
+              sx={{ width: "fit-content" }}
             >
               <MenuItem value="round trip">Round trip</MenuItem>
               <MenuItem value="one way">One way</MenuItem>
               <MenuItem value="multi-city">Multi-city</MenuItem>
             </Select>
           </FormControl>
-          <FormControl fullWidth>
-            <InputLabel id="people">People</InputLabel>
+          <FormControl>
             <Select
               labelId="people"
               id="people-select"
               value={people}
               label="People"
               onChange={(e) => setPeople(e.target.value)}
+              variant="standard"
+              sx={{ width: "fit-content" }}
             >
               <MenuItem value="1">1</MenuItem>
               <MenuItem value="2">2</MenuItem>
@@ -178,14 +180,15 @@ const SearchForm = () => {
               <MenuItem value="9">9</MenuItem>
             </Select>
           </FormControl>
-          <FormControl fullWidth>
-            <InputLabel id="class">Class</InputLabel>
+          <FormControl>
             <Select
               labelId="class"
               id="class-select"
               value={classType}
               label="Class"
               onChange={(e) => setClassType(e.target.value)}
+              variant="standard"
+              sx={{ width: "fit-content" }}
             >
               <MenuItem value="economy">Economy</MenuItem>
               <MenuItem value="premium economy">Premium economy</MenuItem>
@@ -198,22 +201,9 @@ const SearchForm = () => {
         <Grid container spacing={2}>
           <Grid size={3}>
             <Autocomplete
-              // options={fromAirportResults.map(
-              //   (airport: {
-              //     presentation: { title: string };
-              //     skyId: string;
-              //   }) => ({
-              //     label: `${airport.presentation.title} ${airport.skyId}`,
-              //     id: airport.skyId,
-              //   })
-              // )}
               options={fromAirportResults}
               loading={fromAirportResultsLoading}
-              // value={from}
-              // onChange={(_, newValue) => setFrom(newValue?.id)}
               onChange={(_, value) => setFromAirport(value)}
-              // inputValue={fromInput}
-              // onInputChange={handleFromInputChange}
               onInputChange={(_, newValue) => {
                 if (newValue) {
                   getAirportResults(
