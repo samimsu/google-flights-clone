@@ -4,7 +4,6 @@ import {
   Button,
   FormControl,
   Grid2 as Grid,
-  InputLabel,
   MenuItem,
   Paper,
   Select,
