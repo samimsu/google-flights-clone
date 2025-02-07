@@ -1,5 +1,4 @@
 import { useLocation } from "react-router";
-import mockFlights from "../../mock/jsons/flights/searchFlightsV2-dxbisb.json";
 import { format, parseISO } from "date-fns";
 import { Box, Divider, Grid2 as Grid, Stack, Typography } from "@mui/material";
 
